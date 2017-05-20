@@ -1,0 +1,31 @@
+<div class="select_batch row">
+	<div class="row" style="padding: 0px 30px;">
+		<h3>Item Code: <span class="label label-default" style="font-size:20px;padding:5px">{%= item_code %}</span></h3>
+	</div>
+
+
+	<div class="row">
+		<div class="col-sm-6 ">
+
+		<div class="col-sm-6 payment-toolbar">
+
+				<div class="row">
+					<table class="table table-bordered" width="100%">
+						<tr>
+           {% for child in batch_no %}
+					 {% if child["actual_qty"] > 0 %}
+					 <td>
+					 	<input type="button"  class="btn btn-default batch_click" value={%= child["batch_id"] %}><br>
+						Expiry:{%= child["expiry"] %}<br>
+						Batch Price:{%= child["price"] %}<br>
+						R.Qty:{%= child["actual_qty"] %}
+   				  {% endfor %}
+					</td>
+					{% endif %}
+					</tr>
+				</div>
+
+
+        </div>
+	</div>
+</div>
